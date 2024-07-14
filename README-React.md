@@ -1,13 +1,13 @@
-ReactiveSignal Documentation
+ReactiveSignal with React
 
-# ReactiveSignal
+# ReactiveSignal with React
 
-A lightweight reactive library for managing state and effects in JavaScript/TypeScript applications.
+A lightweight reactive library for managing state and effects in React applications using JavaScript/TypeScript.
 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
+- [Usage in React](#usage-in-react)
   - [Creating Signals](#creating-signals)
   - [Creating Effects](#creating-effects)
   - [Creating Memos](#creating-memos)
@@ -33,20 +33,28 @@ or
 yarn add reactivesignal
 ```
 
-## Usage
+## Usage in React
 
 ### Creating Signals
 
 Signals are used to create reactive state variables.
 
 ```
+import React from 'react';
 import { createSignal } from 'reactivesignal';
 
-const count = createSignal(0);
+function Counter() {
+  const count = createSignal(0);
 
-console.log(count.value); // 0
-count.value = 1;
-console.log(count.value); // 1
+  return (
+
+      Count: {count.value}
+       count.value++}>Increment
+
+  );
+}
+
+export default Counter;
 ```
 
 ### Creating Effects
@@ -54,15 +62,27 @@ console.log(count.value); // 1
 Effects are functions that run whenever the signals they depend on change.
 
 ```
+import React, { useEffect } from 'react';
 import { createSignal, createEffect } from 'reactivesignal';
 
-const count = createSignal(0);
+function CounterWithEffect() {
+  const count = createSignal(0);
 
-createEffect(() => {
-  console.log(`Count changed to: ${count.value}`);
-});
+  useEffect(() => {
+    createEffect(() => {
+      console.log(`Count changed to: ${count.value}`);
+    });
+  }, [count]);
 
-count.value = 1; // Logs: Count changed to: 1
+  return (
+
+      Count: {count.value}
+       count.value++}>Increment
+
+  );
+}
+
+export default CounterWithEffect;
 ```
 
 ### Creating Memos
@@ -70,14 +90,23 @@ count.value = 1; // Logs: Count changed to: 1
 Memos are used to create derived state that automatically updates when its dependencies change.
 
 ```
+import React from 'react';
 import { createSignal, createMemo } from 'reactivesignal';
 
-const count = createSignal(0);
-const doubleCount = createMemo(() => count.value * 2);
+function CounterWithMemo() {
+  const count = createSignal(0);
+  const doubleCount = createMemo(() => count.value * 2);
 
-console.log(doubleCount.value); // 0
-count.value = 2;
-console.log(doubleCount.value); // 4
+  return (
+
+      Count: {count.value}
+      Double Count: {doubleCount.value}
+       count.value++}>Increment
+
+  );
+}
+
+export default CounterWithMemo;
 ```
 
 ### Batching Updates
@@ -85,17 +114,29 @@ console.log(doubleCount.value); // 4
 Batching allows you to group multiple state updates into a single re-render for better performance.
 
 ```
+import React from 'react';
 import { createSignal, batch } from 'reactivesignal';
 
-const count = createSignal(0);
+function BatchingExample() {
+  const count = createSignal(0);
 
-batch(() => {
-  count.value = 1;
-  count.value = 2;
-  count.value = 3;
-});
+  const handleBatchUpdate = () => {
+    batch(() => {
+      count.value = 1;
+      count.value = 2;
+      count.value = 3;
+    });
+  };
 
-console.log(count.value); // 3
+  return (
+
+      Count: {count.value}
+      Batch Update
+
+  );
+}
+
+export default BatchingExample;
 ```
 
 ## API

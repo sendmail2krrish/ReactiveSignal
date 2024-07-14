@@ -1,0 +1,31 @@
+{
+  "name": "reactivesignal",
+  "version": "1.0.0",
+  "description": "A lightweight reactive library for managing state and effects in JavaScript/TypeScript applications.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/reactivesignal.git"
+  },
+  "keywords": [
+    "reactive",
+    "state management",
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "files": [
+    "dist"
+  ]
+}
