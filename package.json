@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/reactivesignal.git"
+    "url": "https://github.com/sendmail2krrish/ReactiveSignal.git"
   },
   "keywords": [
     "reactive",
@@ -20,7 +20,7 @@
     "typescript",
     "react"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Krishna Pau <sendmail2krrish@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.9.5"
