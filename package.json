@@ -1,5 +1,5 @@
 {
-  "name": "reactivesignal",
+  "name": "reactivesignal.ts",
   "version": "1.0.0",
   "description": "A lightweight reactive library for managing state and effects in JavaScript/TypeScript applications.",
   "main": "dist/index.js",

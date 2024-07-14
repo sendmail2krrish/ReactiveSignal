@@ -24,13 +24,13 @@ A lightweight reactive library for managing state and effects in JavaScript/Type
 To install ReactiveSignal, you can use npm or yarn:
 
 ```
-npm install reactivesignal
+npm install reactivesignal.ts
 ```
 
 or
 
 ```
-yarn add reactivesignal
+yarn add reactivesignal.ts
 ```
 
 ## Usage
