@@ -40,7 +40,7 @@ yarn add reactivesignal.ts
 Signals are used to create reactive state variables.
 
 ```
-import { createSignal } from 'reactivesignal';
+import { createSignal } from 'reactivesignal.ts';
 
 const count = createSignal(0);
 
@@ -54,7 +54,7 @@ console.log(count.value); // 1
 Effects are functions that run whenever the signals they depend on change.
 
 ```
-import { createSignal, createEffect } from 'reactivesignal';
+import { createSignal, createEffect } from 'reactivesignal.ts';
 
 const count = createSignal(0);
 
@@ -70,7 +70,7 @@ count.value = 1; // Logs: Count changed to: 1
 Memos are used to create derived state that automatically updates when its dependencies change.
 
 ```
-import { createSignal, createMemo } from 'reactivesignal';
+import { createSignal, createMemo } from 'reactivesignal.ts';
 
 const count = createSignal(0);
 const doubleCount = createMemo(() => count.value * 2);
@@ -85,7 +85,7 @@ console.log(doubleCount.value); // 4
 Batching allows you to group multiple state updates into a single re-render for better performance.
 
 ```
-import { createSignal, batch } from 'reactivesignal';
+import { createSignal, batch } from 'reactivesignal.ts';
 
 const count = createSignal(0);
 
